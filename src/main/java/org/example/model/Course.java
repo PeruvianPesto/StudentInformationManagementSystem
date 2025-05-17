@@ -8,13 +8,19 @@ public class Course {
     private int courseSize;
     private Student[] enrolledStudents;
     private int numStudents;
+    private float credits;
     
-    public Course(String courseName, int crn, int courseSize) {
+    public Course(String courseName, int crn, int courseSize, float credits) {
         this.courseName = courseName;
         this.crn = crn;
         this.courseSize = courseSize;
+        this.credits = credits;
         enrolledStudents = new Student[courseSize];
         numStudents = 0;
+    }
+
+    public float getCredits() {
+        return credits;
     }
 
     public String getCourseName() {
@@ -70,6 +76,17 @@ public class Course {
         for(int i = 0; i < numStudents; i++) {
             System.out.println("Name: " + enrolledStudents[i].getName() + " ID: " + enrolledStudents[i].getId());
         }
+    }
+
+    public Student getEnrolled(int id) {
+        int i;
+        for (i = 0; i < numStudents; i++) {
+            if(enrolledStudents[i].getId() == id) 
+                break;
+        }
+        if(i == numStudents)
+            return null;
+        return enrolledStudents[i];
     }
 
 }

@@ -27,11 +27,11 @@ public class Main {
         //TEACHER FUNCTIONALITY TEST
         /* 
         Course [] arr = new Course[5];
-        arr[0] = new Course("Math", 1, 20);
-        arr[1] = new Course("Science", 2, 20);
-        arr[2] = new Course("Art", 3, 20);
-        arr[3] = new Course("English", 4, 20);
-        arr[4] = new Course("CS", 5, 20);
+        arr[0] = new Course("Math", 1, 20, 4.0f);
+        arr[1] = new Course("Science", 2, 20, 4.0f);
+        arr[2] = new Course("Art", 3, 20, 4.0f);
+        arr[3] = new Course("English", 4, 20, 4.0f);
+        arr[4] = new Course("CS", 5, 20, 4.0f);
 
         Teacher a = new Teacher(1, "Teacher");
 
@@ -43,6 +43,57 @@ public class Main {
         a.removeCourse(1);
         a.removeCourse(5);
         a.printCourses();
+        */
+
+        //Student Add and Remove Courses, Grades Test
+        /*
+        Course [] arr = new Course[5];
+        Student s1 = new Student(1234, "John");
+        arr[0] = new Course("Math", 1, 20, 4.0f);
+        arr[1] = new Course("Science", 2, 20, 4.0f);
+        arr[2] = new Course("Art", 3, 20, 4.0f);
+        arr[3] = new Course("English", 4, 20, 4.0f);
+        arr[4] = new Course("CS", 5, 20, 10.0f);
+        for(int i = 0; i < 5; i++) {
+            s1.addCourse(arr[i]);
+        }
+        s1.printCurrentCourses();
+        s1.printCompletedCourses();
+
+        s1.removeCourse(5);
+        s1.removeCourse(1);
+        s1.completeCourse(4);
+
+        s1.printCurrentCourses();
+        s1.printCompletedCourses();
+        */
+
+        //Teacher Updating Student Grade and Attendance
+        /* 
+        Student s1 = new Student(1234, "John");
+        Teacher t1 = new Teacher(2000, "Bob");
+        Course [] arr = new Course[2];
+        arr[0] = new Course("Math", 1, 5, 4.0f);
+        arr[1] = new Course("Science", 2, 5, 4.0f);
+
+        s1.addCourse(arr[1]);
+
+        s1.printCurrentCourses();
+
+        t1.teachCourse(arr[0]);
+        t1.teachCourse(arr[1]);
+
+        t1.changeGrade(arr[0].getCrn(), s1.getId(), 60);
+        t1.changeGrade(arr[1].getCrn(), s1.getId(), -60);
+        t1.changeGrade(arr[1].getCrn(), s1.getId(), 100);
+
+        s1.printCurrentCourses();
+
+        t1.changeAttendance(arr[0].getCrn(), s1.getId(), 60);
+        t1.changeAttendance(arr[1].getCrn(), s1.getId(), -60);
+        t1.changeAttendance(arr[1].getCrn(), s1.getId(), 100);
+
+        System.out.println("\nAttendance: " + s1.getCourseGrade(arr[1].getCrn()).getAttendance());
         */
 
     }

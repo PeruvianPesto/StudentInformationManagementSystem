@@ -18,4 +18,8 @@ public abstract class Person {
         return name;
     }
 
+    public void printInfo() {
+        System.out.println("Name: " + name + " ID: " + id);
+    }
+
 }

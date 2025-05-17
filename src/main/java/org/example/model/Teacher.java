@@ -1,7 +1,7 @@
 package org.example.model;
 
 public class Teacher extends Person{
-    public static int maxCourses = 5;
+    private static int maxCourses = 5;
     private Course [] courses;
     private int coursesTaught = 0;
 
@@ -54,4 +54,34 @@ public class Teacher extends Person{
             System.out.println("Course Name: " + courses[i].getCourseName() + " CRN: " + courses[i].getCrn() + " Students: " + courses[i].getCourseSize());
         }
     }
+
+    public void changeGrade(int crn, int id, double newGrade) {
+        try {
+            searchStudent(crn, id).getCourseGrade(crn).updateGrade(newGrade);
+        }catch(Exception e) {
+            System.out.println("Student or Course not found");
+        }
+    }
+
+    public void changeAttendance(int crn, int id, double attendance) {
+        try {
+            searchStudent(crn, id).getCourseGrade(crn).updateAttendance(attendance);
+        }catch(Exception e) {
+            System.out.println("Student or Course not found");
+        }
+    }
+
+    public Student searchStudent(int crn, int id){
+        int i;
+        for(i = 0; i < coursesTaught; i++) {
+            if(courses[i].getCrn() == crn)
+                break;
+        }
+        if(i == coursesTaught) {
+            System.out.println("course not found");
+            return null;
+        }
+        return courses[i].getEnrolled(id);
+    }
+
 }
