@@ -5,6 +5,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import org.example.DBUtil;
+import java.sql.Connection;
 
 public class MainApplication extends Application {
 
@@ -19,6 +21,11 @@ public class MainApplication extends Application {
     }
 
     public static void main(String[] args) {
+    	try (Connection conn = DBUtil.getConnection()) {
+            System.out.println("Connected to MySQL!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         launch();
     }
 }
