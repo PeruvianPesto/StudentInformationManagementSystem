@@ -1,0 +1,30 @@
+COURSE:3001:Introduction to Computer Science:30:3.0:2001
+COURSE:3002:Data Structures and Algorithms:25:4.0:2001
+COURSE:3003:Calculus I:35:4.0:2002
+COURSE:3004:Calculus II:30:4.0:2002
+COURSE:3005:Physics I:28:3.0:2003
+COURSE:3006:Physics II:25:3.0:2003
+COURSE:3007:English Composition:32:3.0:2004
+COURSE:3008:World Literature:28:3.0:2004
+COURSE:3009:General Chemistry:30:4.0:2005
+COURSE:3010:Organic Chemistry:20:4.0:2005
+COURSE:3011:Statistics:35:3.0:2006
+COURSE:3012:Linear Algebra:25:3.0:2006
+COURSE:3013:Biology I:32:3.0:2007
+COURSE:3014:Biology II:28:3.0:2007
+COURSE:3015:Psychology 101:40:3.0:2008
+COURSE:3016:Abnormal Psychology:25:3.0:2008
+COURSE:3017:American History:35:3.0:2009
+COURSE:3018:World History:30:3.0:2009
+COURSE:3019:Microeconomics:32:3.0:2010
+COURSE:3020:Macroeconomics:30:3.0:2010
+COURSE:3021:Database Systems:25:3.0:2011
+COURSE:3022:Software Engineering:20:4.0:2011
+COURSE:3023:Philosophy 101:28:3.0:2012
+COURSE:3024:Ethics:25:3.0:2012
+COURSE:3025:Discrete Mathematics:30:3.0:2013
+COURSE:3026:Computer Networks:25:3.0:2013
+COURSE:3027:Art History:35:3.0:2014
+COURSE:3028:Music Theory:20:3.0:2014
+COURSE:3029:Spanish I:30:3.0:2015
+COURSE:3030:Spanish II:25:3.0:2015
