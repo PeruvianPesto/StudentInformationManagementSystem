@@ -1,0 +1,63 @@
+Install MySQL Locally
+
+Download & install MySQL Community Server (8.0+) for Windows from https://dev.mysql.com/downloads/installer/
+
+During setup, note your root password (or create an appuser as documented).
+
+Clone the GitHub Repo
+
+bash
+Copy
+Edit
+git clone https://github.com/your-username/StudentInformationManagementSystem.git
+cd StudentInformationManagementSystem
+Inspect the SQL Files
+In the project root you should see:
+
+schema.sql – all CREATE TABLE … statements
+
+seed.sql  – optional INSERT statements for sample data
+
+Create & Load the Database
+
+bash
+Copy
+Edit
+mysql -u root -p < schema.sql
+mysql -u root -p student_db < seed.sql    # omit if you don’t have seed.sql
+You’ll be prompted for your MySQL password.
+
+This creates a database named student_db and populates its tables.
+
+Update Database Credentials
+Open src/main/java/org/example/DBUtil.java and set:
+
+java
+Copy
+Edit
+private static final String USER     = "root";           // or “appuser”
+private static final String PASSWORD = "YourPasswordHere";
+Save the file.
+
+Run the JavaFX App
+In Eclipse:
+
+Right-click the project → Run As → Maven build…
+
+Enter javafx:run as the Goal → Run
+You should see “Connected to MySQL!” and the JavaFX window.
+
+Make Schema Changes
+Whenever you alter tables:
+
+Edit schema.sql (and optionally seed.sql) in the repo.
+
+Commit & push those changes:
+
+bash
+Copy
+Edit
+git add schema.sql seed.sql
+git commit -m "Update schema: add X column to Y table"
+git push
+Teammates then pull and re-run steps 4–6 on a fresh DB.
