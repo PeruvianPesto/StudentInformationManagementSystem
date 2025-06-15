@@ -9,8 +9,8 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import org.example.model.*;
-import org.example.model.FileManager;
+import org.example.DBUtil;
+import java.sql.Connection;
 
 public class MainApplication extends Application {
 
@@ -268,6 +268,11 @@ public class MainApplication extends Application {
     }
 
     public static void main(String[] args) {
+    	try (Connection conn = DBUtil.getConnection()) {
+            System.out.println("Connected to MySQL!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         launch();
     }
 }
